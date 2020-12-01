@@ -9,7 +9,8 @@ import javax.sql.DataSource;
 
 /**
  * DataSourceConfig 中提供了多个数据源
- * 此类配置数据源连接实例，以供业务调用
+ * 此类配置数据源连接实例，以供数据源配置器调用
+ * Liz 2020-12-1
  */
 @Configuration
 public class DataSourceConfig {

@@ -12,6 +12,10 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 
+/**
+ * busi数据源配置器
+ * Liz 2020-12-1
+ */
 @Configuration
 @MapperScan(basePackages = "com.china.mapper.busi", sqlSessionFactoryRef = "busiSqlSessionFactory")
 public class BusiDSConfig {

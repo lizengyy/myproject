@@ -6,6 +6,10 @@ import org.springframework.util.StringUtils;
 
 import java.util.Map;
 
+/**
+ * Map数据处理工具类
+ * Liz 2020-12-1
+ */
 public class MapUtil {
 
     private static Logger log = LoggerFactory.getLogger(MapUtil.class);
