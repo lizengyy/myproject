@@ -50,13 +50,13 @@ public class MyErrorController implements ErrorController {
         int status = response.getStatus();
         switch (status) {
             case 403:
-                return "/error/403.jpg";
+                return "error/403";
             case 404:
-                return "/error/404.jpg";
+                return "error/404";
             case 500:
-                return "/error/500.jpg";
+                return "error/500";
         }
-        return "/error/500.jpg";
+        return "error/500";
     }
 
     /**

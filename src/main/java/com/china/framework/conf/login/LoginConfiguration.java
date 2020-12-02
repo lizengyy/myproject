@@ -33,9 +33,9 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/error/*",
                 "/css/login.css",
                 "/favicon.ico",
-                "/js/login/**/*.js",
-                "/img/login/*.jpg",
-                "/img/login/*.PNG"
+                "/img/error/**",
+                "/img/btn/**",
+                "/img/login/**"
         );
     }
 
