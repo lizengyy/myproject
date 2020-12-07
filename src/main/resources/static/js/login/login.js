@@ -1,3 +1,3 @@
-function paramCheck(){
-
+function storeUserInfo(){
+    $("#storeBtn").hide();
 }
