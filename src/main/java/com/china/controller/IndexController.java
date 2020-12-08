@@ -48,7 +48,7 @@ public class IndexController {
             AdminEntity user = adminService.selectOneAdministrator(username);
             int isAdmin = 0;
             if(user!=null) {
-                log.info("$$$$$$$$$$$$$用户"+username+"请求登录");
+                log.debug("$$$$$$$$$$$$$用户"+username+"请求登录");
                 if (password.equals(user.getPwd())) {
                     isAdmin = 1;
                 }else {
@@ -65,15 +65,19 @@ public class IndexController {
                 session.setAttribute(user.getId(), data);
                 Cookie cookie=new Cookie("UserTicket",user.getId());
                 response.addCookie(cookie);
+                log.debug("用户"+username+"登录成功转向首页");
                 return new ModelAndView("index", data);
             }else if(isAdmin==2){
                 data.put("errMsg", "密码不正确！");
+                log.debug("密码错误，用户"+username+"登录失败");
                 return new ModelAndView("login", data);
             }else if(isAdmin==2){
                 data.put("errMsg", "账号不存在！");
+                log.debug("不存在的用户"+username+"登录失败");
                 return new ModelAndView("login", data);
             }else{
                 data.put("errMsg", "未知异常！");
+                log.debug("未知异常，用户"+username+"登录失败");
                 return new ModelAndView("login", data);
             }
         }catch (Exception e){
