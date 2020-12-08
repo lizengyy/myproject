@@ -1,5 +1,6 @@
 package com.china.framework.conf.druid;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -18,12 +19,14 @@ public class DataSourceConfig {
     @Bean("adminDS")
     @ConfigurationProperties(prefix="spring.datasource.druid.admin")
     DataSource admin(){
-        return DruidDataSourceBuilder.create().build();
+        DruidDataSource dataSource = DruidDataSourceBuilder.create().build();
+        return dataSource;
     }
 
     @Bean("busiDS")
     @ConfigurationProperties(prefix="spring.datasource.druid.busi")
     DataSource busi(){
-        return DruidDataSourceBuilder.create().build();
+        DruidDataSource dataSource = DruidDataSourceBuilder.create().build();
+        return dataSource;
     }
 }

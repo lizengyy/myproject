@@ -1,6 +1,8 @@
 package com.china.entity.admin;
 
-public class AdminEntity {
+import com.china.entity.BaseEntity;
+
+public class AdminEntity extends BaseEntity {
 
     private String id;
     private String user;

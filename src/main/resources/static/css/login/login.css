@@ -52,7 +52,7 @@ body:before{
     width:100%;
     margin-bottom:20px;
 }
-.contact-form input[type="username"],
+.contact-form input[type="text"],
 .contact-form input[type="password"]
 {
     border:none;

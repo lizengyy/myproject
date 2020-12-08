@@ -50,10 +50,16 @@ public class MyErrorController implements ErrorController {
         int status = response.getStatus();
         switch (status) {
             case 403:
+                log.debug("禁止操作");
                 return "error/403";
             case 404:
+                log.debug("资源不存在");
                 return "error/404";
+            case 415:
+                log.debug("HTTP接口请求格式异常！");
+                return "error/415";
             case 500:
+                log.debug("未知异常");
                 return "error/500";
         }
         return "error/500";
@@ -66,9 +72,7 @@ public class MyErrorController implements ErrorController {
     @ResponseBody
     @ExceptionHandler(value = {Exception.class})
     public ApiResponse errorApiHandler(HttpServletRequest request, final Exception ex, final WebRequest req) {
-
-        RequestAttributes requestAttributes = new ServletRequestAttributes(request);
-        log.info(ex.getMessage()+"------------------"+ex.getStackTrace());
+        log.error("程序异常", ex);
         Map<String, Object> attr = this.errorAttributes.getErrorAttributes(req, false);
         int status = getStatus(request);
 
