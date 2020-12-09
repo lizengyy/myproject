@@ -60,6 +60,6 @@ logging:
   pattern:
     console: '%d{HH:mm:ss} %clr(%-5level){blue} %clr(%logger{32}){cyan} %clr(%msg%n){yellow}'
     file: '%d{yyyy-MM-dd HH:mm:ss}[%thread]%-5level%logger{64}%msg%n'
-  #日志级别
+    #日志级别
   level:
     root: info

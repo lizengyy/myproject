@@ -62,4 +62,4 @@ logging:
     file: '%d{yyyy-MM-dd HH:mm:ss}[%thread]%-5level%logger{64}%msg%n'
   #日志级别
   level:
-    root: debug
+    root: info

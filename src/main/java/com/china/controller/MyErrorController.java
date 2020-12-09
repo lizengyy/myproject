@@ -47,16 +47,16 @@ public class MyErrorController implements ErrorController {
         int status = response.getStatus();
         switch (status) {
             case 403:
-                log.debug("禁止操作");
+                log.info("禁止操作");
                 return "error/403";
             case 404:
-                log.debug("资源不存在");
+                log.info("资源不存在");
                 return "error/404";
             case 415:
-                log.debug("HTTP接口请求格式异常！");
+                log.info("HTTP接口请求格式异常！");
                 return "error/415";
             case 500:
-                log.debug("未知异常");
+                log.info("未知异常");
                 return "error/500";
         }
         return "error/500";
