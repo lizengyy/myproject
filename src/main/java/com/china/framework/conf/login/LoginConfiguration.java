@@ -33,7 +33,7 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/error/*",
                 "/css/**",
                 "/jquery/**",
-                "/layui/**",
+                "/webjars/**",
                 "/js/**",
                 "/favicon.ico",
                 "/img/error/**",

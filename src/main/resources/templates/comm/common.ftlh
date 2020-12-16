@@ -1,6 +1,8 @@
 <#--公共样式-start-->
+<link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
 <#--jquery-->
-<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <#--bootstrap-->
-<#--<script src="/js/bootstrap.min.js"></script>-->
+<script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <#--公共js-end-->

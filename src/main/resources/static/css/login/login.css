@@ -17,23 +17,23 @@ body:before{
     filter:
 }
 .contact-form{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:400px;
-    height:300px;
-    padding:80px 40px;
-    background:rgba(0,0,0,.5);
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 34%;
+    height: 74%;
+    padding: 3% 5% 0% 5%;
+    background: rgba(0,0,0,.5);
 }
 .avatar{
-    position:absolute;
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    overflow:hidden;
-    top:calc(-80px/2);
-    left:calc(50% - 40px);
+    position: absolute;
+    width: 22%;
+    height: 22%;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-13%);
+    left: calc(39%);
 }
 .contact-form h2{
     margin:0;
@@ -50,28 +50,26 @@ body:before{
 }
 .contact-form input{
     width:100%;
-    margin-bottom:20px;
+    margin-bottom:5%;
 }
 .contact-form input[type="text"],
 .contact-form input[type="password"]
 {
-    border:none;
-    border-bottom:1px solid #fff;
-    background:transparent;
-    outline:none;
-    height:40px;
-    color:#fff;
-    font-size:16px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 120%;
 }
 .contact-form input[type="submit"]{
-    height:30px;
-    color:#fff;
-    font-size:15px;
-    background:red;
-    cursor:pointer;
-    border:none;
-    ouline:none;
-    margin-top:15%;
+    color: #fff;
+    font-size: 120%;
+    background: red;
+    cursor: pointer;
+    border: none;
+    margin-top: 5%;
 }
 .contact-form a{
     color:#fff;

@@ -13,35 +13,59 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      # 初始连接数
-      initial-size: 2
-      # 最大连接池数量
-      max-active: 100
-      # 最小连接池数量
-      min-idle: 1
-      # 配置获取连接等待超时的时间
-      max-wait: 5000
-      # 打开PSCache，并且指定每个连接上PSCache的大小
-      pool-prepared-statements: false
-      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-      timeBetweenEvictionRunsMillis: 60000
-      # 配置一个连接在池中最小生存的时间，单位是毫秒
-      min-evictable-idle-time-millis: 60000
-      validation-query: SELECT 1 FROM DUAL
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      #连接失败重试次数
-      connection-error-retry-attempts: 3
-      #失败后断出线程
-      break-after-acquire-failure: true
-      #连接失败后是否立即杀死挂起线程
-      fail-fast: true
       admin:
+        # 初始连接数
+        initial-size: 2
+        # 最大连接池数量
+        max-active: 100
+        # 最小连接池数量
+        min-idle: 1
+        # 配置获取连接等待超时的时间
+        max-wait: 60000
+        # 打开PSCache，并且指定每个连接上PSCache的大小
+        pool-prepared-statements: false
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        min-evictable-idle-time-millis: 60000
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        #连接失败重试次数
+        connection-error-retry-attempts: 3
+        #失败后断出线程
+        break-after-acquire-failure: true
+        #连接失败后是否立即杀死挂起线程
+        fail-fast: true
         url: jdbc:mysql://111.230.187.248:59469/admin?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
         username: admin
         password: erfG202011
       busi:
+        # 初始连接数
+        initial-size: 2
+        # 最大连接池数量
+        max-active: 100
+        # 最小连接池数量
+        min-idle: 1
+        # 配置获取连接等待超时的时间
+        max-wait: 60000
+        # 打开PSCache，并且指定每个连接上PSCache的大小
+        pool-prepared-statements: false
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        min-evictable-idle-time-millis: 60000
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        #连接失败重试次数
+        connection-error-retry-attempts: 3
+        #失败后断出线程
+        break-after-acquire-failure: true
+        #连接失败后是否立即杀死挂起线程
+        fail-fast: true
         url: jdbc:mysql://111.230.187.248:59469/busi?useUnicode=true&characterEncoding=utf8
         username: busi
         password: erfG202011
