@@ -34,7 +34,7 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/css/**",
                 "/jquery/**",
                 "/webjars/**",
-                "/js/**",
+                "/js/login/**",
                 "/favicon.ico",
                 "/img/error/**",
                 "/img/btn/**",

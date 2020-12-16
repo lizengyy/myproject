@@ -41,22 +41,9 @@ function toVaild(){
     $("#err-msg").html("&nbsp;");
     return true;
 }
-$("#saveUserInfo").click(function() {
-    var formObject = {};
-    var formArray =$("#loginForm").serializeArray();
-    $.each(formArray,function(i,item){
-        formObject[item.name] = item.value;
-    });
-    $.ajax({
-        url:"/login",
-        type:"post",
-        // contentType: "application/json; charset=utf-8",
-        data: formObject,//JSON.stringify(formObject),
-        // dataType: "json",
-        success:function(data){
-            alert(data.msg);
-        },
-        error:function(e){
-        }
-    });
-});
+
+function toSecret(_this){
+    var $this=$(_this);
+    var pwd = $this.val();
+    $this.val($.base64.encode(pwd));
+}

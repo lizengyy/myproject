@@ -1,4 +1,4 @@
-package com.china.controller;
+package com.china.controller.index;
 
 import com.china.entity.admin.AdminEntity;
 import com.china.service.admin.AdminService;
@@ -21,13 +21,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 主页和登录的控制器
+ * 登录控制器
  * Liz 2020-12-1
  */
 @Controller
-public class IndexController {
+public class LoginController {
 
-    Logger log = LoggerFactory.getLogger(IndexController.class);
+    Logger log = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     AdminService adminService;
@@ -49,6 +49,7 @@ public class IndexController {
             int isAdmin = 0;
             if(user!=null) {
                 log.info("$$$$$$$$$$$$$用户"+username+"请求登录");
+                log.info("用户输入密码：" + password );
                 if (password.equals(user.getPwd())) {
                     isAdmin = 1;
                 }else {
@@ -85,14 +86,6 @@ public class IndexController {
             data.put("errMsg", "未知异常！");
             return new ModelAndView("login", data);
         }
-    }
-
-    @RequestMapping("/index")
-    public ModelAndView index() {
-        Map<String, Object> data = new HashMap<>(2);
-        data.put("name", "YiHui Freemarker");
-        data.put("now", LocalDateTime.now().toString());
-        return new ModelAndView("index", data);
     }
 
 }
