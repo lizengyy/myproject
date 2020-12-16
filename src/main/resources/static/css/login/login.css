@@ -9,9 +9,9 @@ body:before{
     height:100vh;
     background-image:url("/img/login/background.jpg");
     background-position:left center;
-    background-repeat:repeat-x;
+    background-repeat:repeat;
     background-attachment:fixed;
-    background-size:60% 100%;
+    /*background-size:60% 100%;*/
     -webkit-filter:blur(6px) brightness(80%);
     -moz-filter:blur(10px);
     filter:
