@@ -32,7 +32,7 @@ public class LoginController {
     @Autowired
     AdminService adminService;
 
-    @GetMapping(path = {"", "/", "/loginPage"})
+    @GetMapping(path = {"", "/", "/login", "/loginPage"})
     public String loginPage() {
         return "login";
     }
