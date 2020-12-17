@@ -1,0 +1,29 @@
+.comm-icon {
+    display: block;
+    height: auto;
+    width: 30px;
+}
+
+.bg-manager{
+    background-color: #435653!important;
+}
+
+.help-icon{
+    cursor: help;
+}
+
+.comm-input {
+    display: block;
+    margin-left: 1rem;
+    padding: .25rem .45rem;
+    font-size: 1.25rem;
+    line-height: 0;
+    /* color: #495057; */
+    outline: 0;
+    background-color: #435653;
+    background-clip: padding-box;
+    border: 1px solid #0c0c0c;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    /*box-shadow: 2px 2px 5px 1px;*/
+}
