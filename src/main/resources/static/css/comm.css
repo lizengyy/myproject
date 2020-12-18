@@ -1,7 +1,7 @@
 .comm-icon {
     display: block;
     height: auto;
-    width: 30px;
+    width: 1.8rem;
 }
 
 .bg-manager{
@@ -22,8 +22,16 @@
     outline: 0;
     background-color: #435653;
     background-clip: padding-box;
-    border: 1px solid #0c0c0c;
+    border: 1px solid #000000;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     /*box-shadow: 2px 2px 5px 1px;*/
+}
+
+.iframe-div{
+    border-top-width: 1px !important;
+    border-top-style: solid !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
