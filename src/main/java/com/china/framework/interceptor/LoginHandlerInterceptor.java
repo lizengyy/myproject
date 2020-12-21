@@ -1,5 +1,6 @@
 package com.china.framework.interceptor;
 
+import com.china.entity.admin.AdminEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.lang.Nullable;
@@ -10,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 /**
  * 登录拦截器
@@ -32,6 +32,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         /*这一段代码需要向sso单点登录系统发送请求来验证用户是否有身份凭证(目前方案凭证放在前端请求的cookie里)，
         没有或者凭证无效就要转向登录页面*/
+//        return true;
         try{
             String ticket = "";
             boolean isLogin = false;
@@ -45,7 +46,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
             }
             if(!StringUtils.isEmpty(ticket)){
                 Object user = request.getSession().getAttribute(ticket);
-                if(null!=user && user instanceof Map){
+                if(null!=user && user instanceof AdminEntity){
                     isLogin = true;
                 }else{
                     // TODO 向sso发送验证请求，如果通过才把isLogin设置成 true
