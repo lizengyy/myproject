@@ -16,8 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -61,9 +62,8 @@ public class LoginController {
             /* TODO 这段逻辑后期需要修改，对接sso系统，而非本地校验*/
 
             if(isAdmin==1){
-                data.put("name", user.getName());
-                data.put("now", LocalDateTime.now().toString());
-                session.setAttribute(user.getId(), data);
+                loadIndexData(data);
+                session.setAttribute(user.getId(), user);
                 Cookie cookie=new Cookie("UserTicket",user.getId());
                 response.addCookie(cookie);
                 log.info("用户"+username+"登录成功转向首页");
@@ -86,6 +86,58 @@ public class LoginController {
             data.put("errMsg", "未知异常！");
             return new ModelAndView("login", data);
         }
+    }
+
+    /**
+     * 加载首页数据
+     */
+    private void loadIndexData(Map<String, Object> data){
+        /*菜单数据*/
+        List MenuData = new ArrayList();
+        for(int n=0; n<2; n++){
+            List MenuDataOne = new ArrayList();
+            for(int i=0; i<5; ++i){
+                int a = n==0 ? i : i+1;
+                Map cell = new HashMap();
+                cell.put("MenuId", i);
+                if(n==0 && i==0){
+                    cell.put("MenuName", "主界面");
+                }else{
+                    cell.put("MenuName", "模块"+a);
+                    List MenuDataSecond = new ArrayList();
+                    for(int j=0; j<5; j++){
+                        Map cellSecond = new HashMap();
+                        cellSecond.put("MenuId", i+"_"+j);
+                        cellSecond.put("MenuName", "功能"+(j+1));
+                        MenuDataSecond.add(cellSecond);
+                    }
+                    cell.put("MenuSecond", MenuDataSecond);
+                }
+                MenuDataOne.add(cell);
+            }
+            MenuData.add(MenuDataOne);
+        }
+        data.put("MenuData", MenuData);
+
+        /*用户中心数据*/
+        Map cell = new HashMap();
+        cell.put("MenuId", "999");
+        cell.put("MenuName", "个人中心");
+        List MenuDataSecond = new ArrayList();
+        for(int j=0; j<5; j++){
+            Map cellSecond = new HashMap();
+            cellSecond.put("MenuId", j);
+            cellSecond.put("MenuName", "功能"+(j+1));
+            MenuDataSecond.add(cellSecond);
+        }
+        cell.put("MenuSecond", MenuDataSecond);
+        data.put("UserMenu", cell);
+
+        /*用户指南*/
+        Map helpMap = new HashMap();
+        helpMap.put("MenuId", "9999");
+        helpMap.put("MenuName", "用户指南");
+        data.put("HelpMenu", helpMap);
     }
 
 }

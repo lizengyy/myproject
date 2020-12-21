@@ -21,73 +21,32 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="navbar-brand">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="navbar-toggler-icon"></span>
-                        </button> <a class="navbar-brand" href="#">管理室</a>
+                        管理室
                     </div>
 
                     <div class="navbar-expand-lg">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="welcome-tab">
-                                    <img class="comm-icon" src="/img/icons/house-fill.svg" alt="主界面" title="主界面">
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">模块1</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">行动</a>
-                                    <a class="dropdown-item" href="#">另一个动作</a>
-                                    <a class="dropdown-item" href="#">这里还有其他</a>
-                                    <div class="dropdown-divider">
-                                    </div> <a class="dropdown-item" href="#">分隔链接</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">模块2</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">行动</a> <a class="dropdown-item" href="#">另一个动作</a> <a class="dropdown-item" href="#">这里还有其他</a>
-                                    <div class="dropdown-divider">
-                                    </div> <a class="dropdown-item" href="#">分隔链接</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">模块3</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">行动</a> <a class="dropdown-item" href="#">另一个动作</a> <a class="dropdown-item" href="#">这里还有其他</a>
-                                    <div class="dropdown-divider">
-                                    </div> <a class="dropdown-item" href="#">分隔链接</a>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"">测试测试测试测试测试测试</a>
-                            </li>
-                        </ul>
-
+                        <#if MenuData?exists>
+                            <#list MenuData as menu_list>
+                                <ul class="navbar-nav">
+                                    <#list menu_list as menu_o>
+                                        <li class="dropdown-header">
+                                            <#if menu_o.MenuSecond?exists>
+                                                <a class="nav-link" href="#" id="${menu_o.MenuId}-link" data-toggle="dropdown">${menu_o.MenuName}</a>
+                                                <div class="dropdown-menu" aria-labelledby="${menu_o.MenuId}-link">
+                                                    <#list menu_o.MenuSecond as menu_s>
+                                                        <a class="dropdown-item" href="#" id="${menu_s.MenuId}-link">${menu_s.MenuName}</a>
+                                                    </#list>
+                                                </div>
+                                            <#else>
+                                                <a class="nav-link" href="#" id="${menu_o.MenuId}-link">
+                                                    <img class="comm-icon" src="/img/icons/house-fill.svg" alt="${menu_o.MenuName}" title="${menu_o.MenuName}">
+                                                </a>
+                                            </#if>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </#list>
+                        </#if>
                     </div>
 
                     <div class="navbar-collapse">
@@ -97,21 +56,27 @@
 
                     <div class="ml-md-auto">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="使用指南"  title="使用指南">
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                                    <img class="comm-icon" src="/img/icons/people.svg" alt="个人中心" title="个人中心">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">行动</a> <a class="dropdown-item" href="#">另一个动作</a> <a class="dropdown-item" href="#">这里还有其他</a>
-                                    <div class="dropdown-divider">
-                                    </div> <a class="dropdown-item" href="#">分隔链接</a>
-                                </div>
-                            </li>
+                            <#if HelpMenu?exists>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" id="${HelpMenu["MenuId"]}-link" >
+                                        <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="${HelpMenu["MenuName"]}"  title="${HelpMenu["MenuName"]}">
+                                    </a>
+                                </li>
+                            </#if>
+                            <#if UserMenu?exists>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" id="${UserMenu["MenuId"]}-link" data-toggle="dropdown">
+                                        <img class="comm-icon" src="/img/icons/people.svg" alt="${UserMenu["MenuName"]}" title="${UserMenu["MenuName"]}">
+                                    </a>
+                                    <#if UserMenu["MenuSecond"]??>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="${UserMenu["MenuId"]}-link">
+                                            <#list UserMenu["MenuSecond"] as menu_s>
+                                                <a class="dropdown-item" href="#" id="${menu_s["MenuId"]}-link">${menu_s["MenuName"]}</a>
+                                            </#list>
+                                        </div>
+                                    </#if>
+                                </li>
+                            </#if>
                         </ul>
                     </div>
 
