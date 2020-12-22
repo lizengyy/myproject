@@ -32,7 +32,6 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         /*这一段代码需要向sso单点登录系统发送请求来验证用户是否有身份凭证(目前方案凭证放在前端请求的cookie里)，
         没有或者凭证无效就要转向登录页面*/
-//        return true;
         try{
             String ticket = "";
             boolean isLogin = false;
@@ -46,7 +45,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
             }
             if(!StringUtils.isEmpty(ticket)){
                 Object user = request.getSession().getAttribute(ticket);
-                if(null!=user && user instanceof AdminEntity){
+                if(null!=user && user instanceof AdminEntity){// TODO 拥有sso之后看是否还要用AdminEntity对象
                     isLogin = true;
                 }else{
                     // TODO 向sso发送验证请求，如果通过才把isLogin设置成 true
