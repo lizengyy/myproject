@@ -77,4 +77,9 @@ public class IndexController {
         return new ModelAndView("index", data);
     }
 
+    @RequestMapping("/welcome")
+    public ModelAndView welcome() {
+        Map<String, Object> data = new HashMap();
+        return new ModelAndView("welcome/welcome", data);
+    }
 }

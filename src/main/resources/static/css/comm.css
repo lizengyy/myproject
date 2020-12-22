@@ -1,5 +1,10 @@
-.bg-manager {
+body {
     background-color: #435653 !important;
+}
+
+iframe {
+    width: 100%;
+    border: 0;
 }
 
 .comm-icon {
