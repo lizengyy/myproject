@@ -1,39 +1,29 @@
 body{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
-body:before{
-    content:'';
-    position:fixed;
-    width:100vw;
-    height:100vh;
-    background-image:url("/img/login/background.jpg");
-    background-position:left center;
-    background-repeat:repeat;
-    background-attachment:fixed;
-    /*background-size:60% 100%;*/
-    -webkit-filter:blur(6px) brightness(80%);
-    -moz-filter:blur(10px);
-    filter:
+
+.bg{
+    background-image: url(/img/login/background.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
+
 .contact-form{
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin-top: 15%;
+    margin-left: 33%;
     width: 34%;
-    /*height: 74%;*/
     padding: 3% 5% 5% 5%;
     background: rgba(0,0,0,.5);
 }
 .avatar{
     position: absolute;
-    width: 22%;
     height: 22%;
     border-radius: 50%;
     overflow: hidden;
     top: calc(-13%);
-    left: calc(39%);
+    left: calc(47%);
 }
 .contact-form h2{
     margin:0;
@@ -57,7 +47,7 @@ body:before{
 {
     border: none;
     border-bottom: 1px solid #fff;
-    background: transparent;
+    background: transparent!important;
     outline: none;
     height: 40px;
     color: #fff;

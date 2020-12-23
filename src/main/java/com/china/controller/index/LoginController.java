@@ -63,6 +63,7 @@ public class LoginController {
 
             if(isAdmin==1){
                 loadIndexData(data);
+                data.put("UserName",user.getName());
                 session.setAttribute(user.getId(), user);
                 Cookie cookie=new Cookie("UserTicket",user.getId());
                 response.addCookie(cookie);
