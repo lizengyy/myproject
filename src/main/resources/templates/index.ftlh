@@ -18,7 +18,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg navbar-light bg-manager">
+            <nav class="navbar navbar-expand-lg navbar-light">
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="navbar-brand">
@@ -39,7 +39,7 @@
                                                     </#list>
                                                 </div>
                                             <#else>
-                                                <a class="nav-link" href="#" id="${menu_o.MenuId}-link" target-url="/welcome" onclick="addtab(this)">
+                                                <a class="nav-link" href="#" id="${menu_o.MenuId}-link" target-url="/welcome" onclick="addtab(this)" fun-name="${menu_o.MenuName}">
                                                     <img class="comm-icon" src="/img/icons/house-fill.svg" alt="${menu_o.MenuName}" title="${menu_o.MenuName}">
                                                 </a>
                                             </#if>
@@ -90,31 +90,9 @@
 
     <div class="row">
         <div class="col-md-12">
-
-            <!--添加左侧菜单栏 -->
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <div class="pannel-group" id="accordion">
-                    <div id="left-nav" class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" class="nav-header collapsed" data-parent="#accordion" href="#tag20"><iclass="glyphiconglyphicon-cog"></i>&nbsp;&nbsp;项目管理<span class="pull-right glyphiconglyphicon-chevron-toggle"></span></a></h4>
-                        </div>
-                        <div id="tag20" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <ulclass="navnav-list">
-                                <li class="active"><a href="#" onclick="addtab({'menuid':'21', 'father':'navtab', 'tabname':'项目管理1', 'tabcontentid':'tabcontent', 'taburl':'/testulr'})"><iclass="glyphiconglyphicon-cog"></i>&nbsp;&nbsp;项目管理1</a></li>
-                                <li class="active"><a href="#" onclick="addtab({'menuid':'22', 'father':'navtab', 'tabname':'项目管理2', 'tabcontentid':'tabcontent', 'taburl':''})"><iclass="glyphiconglyphicon-cog"></i>&nbsp;&nbsp;项目管理2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <!--添加tab页面 -->
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                <ul id="navtab" class="navnav-tabs">
-                    <!--通过js获取 tab-->
+                <ul id="tab-ul" class="navbar-nav no-warp">
                 </ul>
 
                 <!-- tab页面的内容 -->

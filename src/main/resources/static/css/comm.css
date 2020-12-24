@@ -14,6 +14,12 @@ iframe {
     width: 1.8rem;
 }
 
+.sm-icon {
+    display: block;
+    height: auto;
+    width: 1rem;
+}
+
 .help-icon {
     cursor: help;
 }
