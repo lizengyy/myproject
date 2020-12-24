@@ -29,8 +29,8 @@ function addtab(_this) {
         // 新增 tab 标签页
         //按钮图标 '<i class="glyphiconglyphicon-remove"></i></a>'
         $("#tab-ul").append(
-            '<li id="tab-li-' + menuid + '" class="no-warp">' +
-            '    <a href="#iframe-' + menuid + '" data-toggle="tab" role="tab" id="tab-a-' + menuid + '">' + menuname +
+            '<li id="tab-li-' + menuid + '">' +
+            '    <a href="#iframe-' + menuid + '" data-toggle="tab" role="tab" id="tab-a-' + menuid + '" class="no-warp">' + menuname +
             '    <img seq-id="'+menuid+'" class="sm-icon" src="/img/icons/x-circle.svg" alt="x" title="关闭" onclick="closetab(this);"></a></li>');
         // 设置 tab标签页的内容
         var content = '<iframe id="iframe-' + menuid + '" name="iframe-tab" src="' + taburl + '" scrolling="no" allowtransparency="true" frameborder="0"></iframe>';
