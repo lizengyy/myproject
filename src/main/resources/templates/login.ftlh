@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<div class="container-fluid bg">
+<div class="container-fluid top-padd">
     <div class="col-md-12">
         <div class="contact-form">
             <img src="/img/login/point.jpg" alt="" class="avatar">

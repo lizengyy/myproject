@@ -3,11 +3,22 @@ body{
     padding: 0;
 }
 
-.bg{
-    background-image: url(/img/login/background.jpg);
+body:before{
+    content:'';
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background-image:url("/img/login/background.jpg");
     background-position: center;
-    background-repeat: repeat;
-    background-attachment: fixed;
+    background-repeat:repeat;
+    background-attachment:fixed;
+    background-size: contain;
+    -webkit-filter:blur(6px) brightness(80%);
+    filter:
+}
+
+.top-padd{
+    padding-top: 0.1px;
 }
 
 .contact-form{
