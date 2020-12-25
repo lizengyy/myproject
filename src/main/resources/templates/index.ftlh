@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="navbar-collapse">
-                        <input class="comm-input mr-sm-2" type="text" />
+                        <input class="comm-input mr-sm-2" type="text"/>
                         <img class="comm-icon" src="/img/icons/search.svg" alt="搜索" title="搜索">
                     </div>
 
@@ -59,8 +59,8 @@
                         <ul class="navbar-nav">
                             <#if HelpMenu?exists>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="${HelpMenu["MenuId"]}-link" >
-                                        <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="${HelpMenu["MenuName"]}"  title="${HelpMenu["MenuName"]}">
+                                    <a class="nav-link" href="#" id="${HelpMenu["MenuId"]}-link">
+                                        <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="${HelpMenu["MenuName"]}" title="${HelpMenu["MenuName"]}">
                                     </a>
                                 </li>
                             </#if>
@@ -85,22 +85,15 @@
                 </div>
             </nav>
 
+            <div id="tabcontent">
+                <ul id="tab-ul" class="tab-ul">
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <!--添加tab页面 -->
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                <ul id="tab-ul" class="navbar-nav no-warp">
-                </ul>
-
-                <!-- tab页面的内容 -->
-                <div id="tabcontent" class="tab-content">
-                    <!--通过js获取 tab对应的页面内容-->
-                </div>
-            </div>
-
             <div id="iframe-div" class="iframe-div">
             </div>
         </div>
