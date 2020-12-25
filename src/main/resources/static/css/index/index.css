@@ -23,13 +23,16 @@
     padding-left: .5rem;
     border-bottom-width: 1px !important;
     border-bottom-style: solid !important;
+    overflow: hidden;
 }
 
 .tab-ul a{
+    width: 5rem;
     color: #000000;
+    text-align: center;
     text-decoration: none;
     background-color: transparent;
     white-space: nowrap;
-    text-overflow-ellipsis: yes;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
