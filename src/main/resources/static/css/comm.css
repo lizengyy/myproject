@@ -8,6 +8,10 @@ iframe {
     height: inherit;
 }
 
+.show{
+    display: block;
+}
+
 .comm-icon {
     display: block;
     height: auto;

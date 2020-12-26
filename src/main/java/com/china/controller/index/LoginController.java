@@ -92,7 +92,7 @@ public class LoginController {
     /**
      * 加载首页数据
      */
-    private void loadIndexData(Map<String, Object> data){
+    public static void loadIndexData(Map<String, Object> data){
         /*菜单数据*/
         List MenuData = new ArrayList();
         for(int n=0; n<2; n++){
@@ -108,8 +108,9 @@ public class LoginController {
                     List MenuDataSecond = new ArrayList();
                     for(int j=0; j<5; j++){
                         Map cellSecond = new HashMap();
-                        cellSecond.put("MenuId", i+"_"+j);
+                        cellSecond.put("MenuId", i+""+j);
                         cellSecond.put("MenuName", "功能"+(j+1));
+                        cellSecond.put("MenuUrl", "/welcome");
                         MenuDataSecond.add(cellSecond);
                     }
                     cell.put("MenuSecond", MenuDataSecond);
@@ -129,6 +130,7 @@ public class LoginController {
             Map cellSecond = new HashMap();
             cellSecond.put("MenuId", j);
             cellSecond.put("MenuName", "功能"+(j+1));
+            cellSecond.put("MenuUrl", "/welcome");
             MenuDataSecond.add(cellSecond);
         }
         cell.put("MenuSecond", MenuDataSecond);
@@ -138,6 +140,7 @@ public class LoginController {
         Map helpMap = new HashMap();
         helpMap.put("MenuId", "9999");
         helpMap.put("MenuName", "用户指南");
+        helpMap.put("MenuUrl", "/welcome");
         data.put("HelpMenu", helpMap);
     }
 

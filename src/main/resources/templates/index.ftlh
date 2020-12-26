@@ -35,7 +35,7 @@
                                                 <a class="nav-link" href="#" id="${menu_o.MenuId}-link" data-toggle="dropdown">${menu_o.MenuName}</a>
                                                 <div class="dropdown-menu" aria-labelledby="${menu_o.MenuId}-link">
                                                     <#list menu_o.MenuSecond as menu_s>
-                                                        <a class="dropdown-item" href="#" id="${menu_s.MenuId}-link">${menu_s.MenuName}</a>
+                                                        <a class="dropdown-item" href="#" id="${menu_s.MenuId}-link" target-url="${menu_s.MenuUrl}" onclick="addtab(this)" fun-name="${menu_s.MenuName}">${menu_s.MenuName}</a>
                                                     </#list>
                                                 </div>
                                             <#else>
@@ -59,7 +59,7 @@
                         <ul class="navbar-nav">
                             <#if HelpMenu?exists>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="${HelpMenu["MenuId"]}-link">
+                                    <a class="nav-link" href="#" id="${HelpMenu["MenuId"]}-link" onclick="addtab(this)" fun-name="${HelpMenu["MenuName"]}" target-url="${HelpMenu["MenuUrl"]}">
                                         <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="${HelpMenu["MenuName"]}" title="${HelpMenu["MenuName"]}">
                                     </a>
                                 </li>
@@ -73,7 +73,7 @@
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="${UserMenu["MenuId"]}-link">
                                             <span class="welcome-tips">这不${UserName}嘛!欢迎欢迎!</span>
                                             <#list UserMenu["MenuSecond"] as menu_s>
-                                                <a class="dropdown-item" href="#" id="${menu_s["MenuId"]}-link">${menu_s["MenuName"]}</a>
+                                                <a class="dropdown-item" href="#" id="${menu_s["MenuId"]}-link" onclick="addtab(this)" fun-name="${menu_s["MenuName"]}" target-url="${menu_s["MenuUrl"]}">${menu_s["MenuName"]}</a>
                                             </#list>
                                         </div>
                                     </#if>
