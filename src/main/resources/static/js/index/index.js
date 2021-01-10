@@ -79,3 +79,13 @@ function closetab(_this){
         popuptab(nextMenu);
     }
 }
+
+function logout(){
+
+}
+
+
+
+
+
+

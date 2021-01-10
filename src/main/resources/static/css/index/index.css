@@ -43,3 +43,7 @@
     border-style: solid solid none none;
     background-color: #594f73;
 }
+
+.logout-tip{
+    margin-top: 1rem;
+}
