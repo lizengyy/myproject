@@ -31,17 +31,19 @@
                                 <ul class="navbar-nav">
                                     <#list menu_list as menu_o>
                                         <li class="dropdown-header">
-                                            <#if menu_o.MenuSecond?exists>
-                                                <a class="nav-link" href="#" id="${menu_o.MenuId}-link" data-toggle="dropdown">${menu_o.MenuName}</a>
-                                                <div class="dropdown-menu" aria-labelledby="${menu_o.MenuId}-link">
-                                                    <#list menu_o.MenuSecond as menu_s>
-                                                        <a class="dropdown-item" href="#" id="${menu_s.MenuId}-link" target-url="${menu_s.MenuUrl}" onclick="addtab(this)" fun-name="${menu_s.MenuName}">${menu_s.MenuName}</a>
+                                            <#if menu_o.menuType==2>
+                                                <a class="nav-link" href="#" id="${menu_o.menuId}-link" target-url="/welcome" onclick="addtab(this)" fun-name="${menu_o.menuName}">
+                                                    <img class="comm-icon" src="/img/icons/house-fill.svg" alt="${menu_o.menuName}" title="${menu_o.menuName}">
+                                                </a>
+                                            <#elseif menu_o.menuSecond??>
+                                                <a class="nav-link" href="#" id="${menu_o.menuId}-link" data-toggle="dropdown">${menu_o.menuName}</a>
+                                                <div class="dropdown-menu" aria-labelledby="${menu_o.menuId}-link">
+                                                    <#list menu_o.menuSecond as menu_s>
+                                                        <a class="dropdown-item" href="#" id="${menu_s.menuId}-link" target-url="${menu_s.menuUrl}" onclick="addtab(this)" fun-name="${menu_s.menuName}">${menu_s.menuName}</a>
                                                     </#list>
                                                 </div>
-                                            <#else>
-                                                <a class="nav-link" href="#" id="${menu_o.MenuId}-link" target-url="/welcome" onclick="addtab(this)" fun-name="${menu_o.MenuName}">
-                                                    <img class="comm-icon" src="/img/icons/house-fill.svg" alt="${menu_o.MenuName}" title="${menu_o.MenuName}">
-                                                </a>
+                                            <#else >
+                                                <a class="nav-link" href="#" id="${menu_o.menuId}-link" data-toggle="dropdown">${menu_o.menuName}</a>
                                             </#if>
                                         </li>
                                     </#list>
@@ -59,21 +61,21 @@
                         <ul class="navbar-nav">
                             <#if HelpMenu?exists>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="${HelpMenu["MenuId"]}-link" onclick="addtab(this)" fun-name="${HelpMenu["MenuName"]}" target-url="${HelpMenu["MenuUrl"]}">
-                                        <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="${HelpMenu["MenuName"]}" title="${HelpMenu["MenuName"]}">
+                                    <a class="nav-link" href="#" id="${HelpMenu.menuId}-link" onclick="addtab(this)" fun-name="${HelpMenu.menuName}" target-url="${HelpMenu.menuUrl}">
+                                        <img class="comm-icon help-icon" src="/img/icons/question-diamond.svg" alt="${HelpMenu.menuName}" title="${HelpMenu.menuName}">
                                     </a>
                                 </li>
                             </#if>
                             <#if UserMenu?exists>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="${UserMenu["MenuId"]}-link" data-toggle="dropdown">
-                                        <img class="comm-icon" src="/img/icons/people.svg" alt="${UserMenu["MenuName"]}" title="${UserMenu["MenuName"]}">
+                                    <a class="nav-link" href="#" id="${UserMenu.menuId}-link" data-toggle="dropdown">
+                                        <img class="comm-icon" src="/img/icons/people.svg" alt="${UserMenu.menuName}" title="${UserMenu.menuName}">
                                     </a>
-                                    <#if UserMenu["MenuSecond"]??>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="${UserMenu["MenuId"]}-link">
+                                    <#if UserMenu.menuType==1&&UserMenu.menuSecond??>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="${UserMenu.menuId}-link">
                                             <span class="welcome-tips">这不${UserName}嘛!欢迎欢迎!</span>
-                                            <#list UserMenu["MenuSecond"] as menu_s>
-                                                <a class="dropdown-item" href="#" id="${menu_s["MenuId"]}-link" onclick="addtab(this)" fun-name="${menu_s["MenuName"]}" target-url="${menu_s["MenuUrl"]}">${menu_s["MenuName"]}</a>
+                                            <#list UserMenu.menuSecond as menu_s>
+                                                <a class="dropdown-item" href="#" id="${menu_s.menuId}-link" onclick="addtab(this)" fun-name="${menu_s.menuName}" target-url="${menu_s.menuUrl}">${menu_s.menuName}</a>
                                             </#list>
                                         </div>
                                     </#if>

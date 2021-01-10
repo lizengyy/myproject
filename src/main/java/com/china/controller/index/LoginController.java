@@ -1,7 +1,6 @@
 package com.china.controller.index;
 
 import com.china.entity.admin.AdminEntity;
-import com.china.entity.admin.MenuEntity;
 import com.china.service.admin.AdminService;
 import com.china.service.admin.MenuService;
 import com.china.utils.MapUtil;
@@ -65,8 +64,7 @@ public class LoginController {
             /* TODO 这段逻辑后期需要修改，对接sso系统，而非本地校验*/
 
             if(isAdmin==1){
-//                data = loadIndexData(user);
-                MenuEntity e = menuService.selectOne();
+                data = loadIndexData(user);
                 data.put("UserName",user.getName());
                 session.setAttribute(user.getId(), user);
                 Cookie cookie=new Cookie("UserTicket",user.getId());

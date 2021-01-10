@@ -8,3 +8,8 @@ server:
 spring:
   profiles:
     active: dev
+
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+    map-underscore-to-camel-case: true

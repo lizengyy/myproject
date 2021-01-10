@@ -1,6 +1,7 @@
 package com.china.entity.admin;
 
 import com.china.entity.BaseEntity;
+import com.china.framework.annotation.TableField;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class MenuEntity extends BaseEntity {
 
     private String menuId ;
     private String menuName ;
-    private int menulevel ;
+    private int menuLevel ;
     private String menuParent ;
     private int menuType ;
     private String menuUrl ;
@@ -17,7 +18,7 @@ public class MenuEntity extends BaseEntity {
     private String menuAttr2 ;
     private String menuAttr3 ;
 
-//    @TableField(exist = false)
+    @TableField(exist = false)
     private List<MenuEntity> menuSecond;
 
     public String getMenuId() {
@@ -36,12 +37,12 @@ public class MenuEntity extends BaseEntity {
         this.menuName = menuName;
     }
 
-    public int getMenulevel() {
-        return menulevel;
+    public int getMenuLevel() {
+        return menuLevel;
     }
 
-    public void setMenulevel(int menulevel) {
-        this.menulevel = menulevel;
+    public void setMenuLevel(int menuLevel) {
+        this.menuLevel = menuLevel;
     }
 
     public String getMenuParent() {

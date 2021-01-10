@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 public class BaseEntity implements Serializable {
 
     private Integer state;
-    private Timestamp createDate;
+    private Timestamp crtDate;
     private String creater;
 
     public Integer getState() {
@@ -17,12 +17,12 @@ public class BaseEntity implements Serializable {
         this.state = state;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCrtDate() {
+        return crtDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCrtDate(Timestamp crtDate) {
+        this.crtDate = crtDate;
     }
 
     public String getCreater() {

@@ -1,15 +1,21 @@
 package com.china.mapper.admin;
 
 import com.china.entity.admin.MenuEntity;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 @Mapper
 public interface MenuMapper {
 
+    @Results(value = {
+            @Result(column = "menu_id", property = "menuId"),
+            @Result(column = "menu_name", property = "menuName"),
+            @Result(column = "menu_level", property = "menuLevel"),
+            @Result(column = "menu_parent", property = "menuParent"),
+            @Result(column = "menu_type", property = "menuType"),
+            @Result(column = "menu_url", property = "menuUrl")
+    })
     @Select("<script> " +
             "select" +
             " menu_id," +
@@ -32,17 +38,5 @@ public interface MenuMapper {
             " order by menu_seq asc" +
             "</script>")
     List<MenuEntity> selectList(@Param("level") int level, @Param("parent") String parent, @Param("type") int type);
-
-    @Select("select" +
-            " menu_id," +
-            " menu_name," +
-            " menu_level," +
-            " menu_parent," +
-            " menu_type," +
-            " menu_url " +
-            "from menus where" +
-            " menu_id = 1 ")
-    MenuEntity selectOne();
-
 
 }
