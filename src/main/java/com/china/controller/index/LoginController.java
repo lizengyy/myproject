@@ -8,13 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -89,6 +87,21 @@ public class LoginController {
             data.put("errMsg", "未知异常！");
             return new ModelAndView("login", data);
         }
+    }
+
+    @RequestMapping(value="/logout", method= RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView logout(HttpServletRequest request, Map param, HttpSession session) {
+        String ticket = request.getAttribute("UserTicket")+"";
+        /* TODO 这段逻辑后期需要修改，发请求注销sso侧的session,成功后再进行后续操作*/
+        if(session.getAttribute(ticket)!=null && session.getAttribute(ticket) instanceof AdminEntity){
+            AdminEntity user = (AdminEntity)request.getSession().getAttribute(ticket);
+            session.removeAttribute(ticket);
+            log.info("$$$$$$$$$$$$$用户"+user.getName()+"已登出");
+        }
+        /* TODO 这段逻辑后期需要修改，发请求注销sso侧的session,成功后再进行后续操作*/
+        Map<String, Object> data = new HashMap();
+        return new ModelAndView("login", data);
     }
 
     /**

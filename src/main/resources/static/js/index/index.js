@@ -81,7 +81,15 @@ function closetab(_this){
 }
 
 function logout(){
-
+    $.ajax({
+        url: "/logout",
+        data: {name: '退出登录'},
+        type: "POST",
+        dataType: "json",
+        success: function(data) {
+            alert("离开");
+        }
+    });
 }
 
 
