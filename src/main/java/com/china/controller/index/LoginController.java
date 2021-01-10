@@ -1,7 +1,9 @@
 package com.china.controller.index;
 
 import com.china.entity.admin.AdminEntity;
+import com.china.entity.admin.MenuEntity;
 import com.china.service.admin.AdminService;
+import com.china.service.admin.MenuService;
 import com.china.utils.MapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,6 +32,9 @@ public class LoginController {
 
     @Autowired
     AdminService adminService;
+
+    @Autowired
+    MenuService menuService;
 
     @GetMapping(path = {"", "/", "/login", "/loginPage"})
     public String loginPage() {
@@ -62,7 +65,8 @@ public class LoginController {
             /* TODO 这段逻辑后期需要修改，对接sso系统，而非本地校验*/
 
             if(isAdmin==1){
-                loadIndexData(data);
+//                data = loadIndexData(user);
+                MenuEntity e = menuService.selectOne();
                 data.put("UserName",user.getName());
                 session.setAttribute(user.getId(), user);
                 Cookie cookie=new Cookie("UserTicket",user.getId());
@@ -90,58 +94,10 @@ public class LoginController {
     }
 
     /**
-     * 加载首页数据
+     * 加载菜单数据
      */
-    public static void loadIndexData(Map<String, Object> data){
-        /*菜单数据*/
-        List MenuData = new ArrayList();
-        for(int n=0; n<2; n++){
-            List MenuDataOne = new ArrayList();
-            for(int i=0; i<5; ++i){
-                int a = n==0 ? i : i+1;
-                Map cell = new HashMap();
-                cell.put("MenuId", i);
-                if(n==0 && i==0){
-                    cell.put("MenuName", "主界面");
-                }else{
-                    cell.put("MenuName", "模块"+a);
-                    List MenuDataSecond = new ArrayList();
-                    for(int j=0; j<5; j++){
-                        Map cellSecond = new HashMap();
-                        cellSecond.put("MenuId", i+""+j);
-                        cellSecond.put("MenuName", "功能"+(j+1));
-                        cellSecond.put("MenuUrl", "/welcome");
-                        MenuDataSecond.add(cellSecond);
-                    }
-                    cell.put("MenuSecond", MenuDataSecond);
-                }
-                MenuDataOne.add(cell);
-            }
-            MenuData.add(MenuDataOne);
-        }
-        data.put("MenuData", MenuData);
-
-        /*用户中心数据*/
-        Map cell = new HashMap();
-        cell.put("MenuId", "999");
-        cell.put("MenuName", "个人中心");
-        List MenuDataSecond = new ArrayList();
-        for(int j=0; j<5; j++){
-            Map cellSecond = new HashMap();
-            cellSecond.put("MenuId", j);
-            cellSecond.put("MenuName", "功能"+(j+1));
-            cellSecond.put("MenuUrl", "/welcome");
-            MenuDataSecond.add(cellSecond);
-        }
-        cell.put("MenuSecond", MenuDataSecond);
-        data.put("UserMenu", cell);
-
-        /*用户指南*/
-        Map helpMap = new HashMap();
-        helpMap.put("MenuId", "9999");
-        helpMap.put("MenuName", "用户指南");
-        helpMap.put("MenuUrl", "/welcome");
-        data.put("HelpMenu", helpMap);
+    private Map loadIndexData(AdminEntity user){
+        return menuService.queryIndexMenu(user);
     }
 
 }

@@ -1,17 +1,19 @@
 package com.china.entity.admin;
 
-import com.china.entity.BaseEntity;
+import java.sql.Timestamp;
 
-public class AdminEntity extends BaseEntity {
+public class AdminEntity{
 
     private String id;
     private String user;
     private String pwd;
     private String name;
-    private String partId;
-    private String roleId;
+    private String part_id;
+    private String role_id;
     private Integer state;
-    private String createDate;
+    private Timestamp createDate;
+    private String creater;
+
 
     public String getId() {
         return id;
@@ -46,21 +48,20 @@ public class AdminEntity extends BaseEntity {
     }
 
     public String getPartId() {
-        return partId;
+        return part_id;
     }
 
     public void setPartId(String partId) {
-        this.partId = partId;
+        this.part_id = partId;
     }
 
     public String getRoleId() {
-        return roleId;
+        return role_id;
     }
 
     public void setRoleId(String roleId) {
-        this.roleId = roleId;
+        this.role_id = roleId;
     }
-
     public Integer getState() {
         return state;
     }
@@ -69,11 +70,20 @@ public class AdminEntity extends BaseEntity {
         this.state = state;
     }
 
-    public String getCreateDate() {
+    public Timestamp getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(String createDate) {
+    public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
     }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater;
+    }
+
 }

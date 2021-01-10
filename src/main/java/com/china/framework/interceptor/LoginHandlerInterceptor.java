@@ -52,6 +52,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
                 }
             }
             if(isLogin){
+                request.setAttribute("UserTicket", ticket);
                 return true;
             }else{
                 log.info("<<<framework>>>用户凭证校验不通过，转向登录页面!");
