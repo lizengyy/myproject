@@ -29,7 +29,6 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/login",
                 "/register",
                 "/loginPage",
-                "/logout",
                 "/error/*",
                 "/css/**",
                 "/jquery/**",

@@ -90,7 +90,6 @@ public class LoginController {
     }
 
     @RequestMapping(value="/logout", method= RequestMethod.POST)
-    @ResponseBody
     public ModelAndView logout(HttpServletRequest request, Map param, HttpSession session) {
         String ticket = request.getAttribute("UserTicket")+"";
         /* TODO 这段逻辑后期需要修改，发请求注销sso侧的session,成功后再进行后续操作*/
