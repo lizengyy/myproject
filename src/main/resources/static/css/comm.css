@@ -8,6 +8,13 @@ iframe {
     height: inherit;
 }
 
+.iframe-div {
+    margin-bottom: 1rem;
+    padding: 1rem 0rem;
+    height: 100vh;
+    background-color: rgba(0,0,0,0);
+}
+
 .show{
     display: block;
 }
@@ -16,6 +23,8 @@ iframe {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 8%;
+    z-index: 1;
 }
 
 .comm-icon {
@@ -51,12 +60,15 @@ iframe {
     /*box-shadow: 2px 2px 5px 1px;*/
 }
 
-.iframe-div {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    height: 100vh;
-    background-color: rgba(0,0,0,0);
+.static-div {
+    position: fixed;
+    left: 4.16%;
+    right: 4.16%;
+    top: 0;
+    z-index: 999;
+    background-color: #556a66;
 }
+
 .dropdown-menu{
     position: absolute;
     top: auto!important;
