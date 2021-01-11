@@ -8,21 +8,6 @@
 
 </head>
 <body>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
-    <h3>Hello World!</h3>
+    <h3>憋瞅啦! 现在啥也妹有，赶紧开发去！</h3>
 </body>
 </html>

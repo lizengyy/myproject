@@ -71,7 +71,7 @@
                             </a>
                             <#if UserMenu.menuType==1&&UserMenu.menuSecond??>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="${UserMenu.menuId}-link">
-                                    <span class="welcome-tips">这不${UserName}嘛!欢迎欢迎!</span>
+                                    <#--<span class="welcome-tips">这不${UserName}嘛!欢迎欢迎!</span>-->
                                     <#list UserMenu.menuSecond as menu_s>
                                         <a class="dropdown-item" href="#" id="${menu_s.menuId}-link" onclick="addtab(this)" fun-name="${menu_s.menuName}" target-url="${menu_s.menuUrl}">${menu_s.menuName}</a>
                                     </#list>

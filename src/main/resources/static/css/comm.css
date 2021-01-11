@@ -8,6 +8,16 @@ iframe {
     height: inherit;
 }
 
+.static-div {
+    position: fixed;
+    left: 4.16%;
+    right: 4.16%;
+    top: 0;
+    padding-top: .5rem;
+    z-index: 999;
+    background-color: #556a66;
+}
+
 .iframe-div {
     margin-bottom: 1rem;
     padding: 1rem 0rem;
@@ -51,21 +61,11 @@ iframe {
     font-size: 1.25rem;
     line-height: 0;
     outline: 0;
-    background-color: #556a66;
+    background-color: rgba(0,0,0,0);
     background-clip: padding-box;
     border: 1px solid #000000;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.static-div {
-    position: fixed;
-    left: 4.16%;
-    right: 4.16%;
-    top: 0;
-    padding-top: .5rem;
-    z-index: 999;
-    background-color: #556a66;
 }
 
 .dropdown-menu{
