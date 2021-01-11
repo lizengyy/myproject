@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="busi-index  col-xs-12 col-sm-12 col-md-11 col-lg-10">
+<div class="busi-index  col-xs-12 col-sm-12 col-md-11 col-lg-11">
 
     <div class="row">
         <div class="col-md-12">
