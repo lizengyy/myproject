@@ -13,9 +13,9 @@
 <script type="text/javascript">
     $(function(){
         if (window.top != window.self) {
-            location.href = location.href.substr(0,location.href.indexOf("/"))+"/frameLogin";
+            location.href = _root_path + "/frameLogin";
         }else{
-            window.location.href=location.href.substr(0,location.href.indexOf("/"))+"/loginPage";
+            window.location.href = _root_path + "/loginPage";
         }
     });
 </script>
