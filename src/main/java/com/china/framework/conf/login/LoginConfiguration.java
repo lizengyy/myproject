@@ -27,6 +27,7 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/",
                 "/error",
                 "/login",
+                "/reLogin",
                 "/unlogging",
                 "/frameLogin",
                 "/loginPage",
@@ -38,7 +39,8 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/favicon.ico",
                 "/img/error/**",
                 "/img/btn/**",
-                "/img/login/**"
+                "/img/login/**",
+                "/img/icons/**"
         );
     }
 

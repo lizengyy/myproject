@@ -52,4 +52,15 @@ public class MapUtil {
         }
     }
 
+    public static <T>T safeObj(String key, Class<T> c,  Map param) {
+        if(StringUtils.isEmpty(key)){
+            return null;
+        }
+        if(param.containsKey(key) && param.get(key).getClass().equals(c)){
+            return (T) param.get(key);
+        }
+        param.getClass();
+        return null;
+    }
+
 }

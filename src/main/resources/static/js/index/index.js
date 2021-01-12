@@ -87,7 +87,11 @@ function logout(){
         type: "POST",
         dataType: "json",
         success: function(data) {
-            alert("离开");
+            if(data=="1"){
+                window.location.href = _root_path + "/loginPage";
+            }else{
+                alert("敲豆嘛跌，退出程序有点问题，快打120！");
+            }
         }
     });
 }

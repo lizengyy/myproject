@@ -6,8 +6,8 @@
 
     <#include "common.ftlh">
 
-    <link rel="stylesheet" href="css/login/framelogin.css">
-    <script type="text/javascript" src="/js/login/framelogin.js"></script>
+    <link rel="stylesheet" href="${rootPath}/css/login/framelogin.css">
+    <script type="text/javascript" src="${rootPath}/js/login/login.js"></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="contact-form">
             <img src="/img/login/point.jpg" alt="" class="avatar">
             <h2>掉线啦</h2>
-            <form id="loginForm" name="loginForm" method="post" action="/login" onsubmit="return toVaild()">
+            <form id="loginForm" name="loginForm" action="">
                 <p>账号：</p>
                 <input id="userName" name="userName" type="text" placeholder="例行检查，报上名来">
                 <p>密码：</p>
@@ -26,7 +26,8 @@
                 <#else>
                     <p id="err-msg" name="err-msg" style="color: red">&nbsp;</p>
                 </#if>
-                <input type="submit" value="走你~">
+                <input type="button" value="走你~" onclick="reLogin()">
+                <p><input id="storeBtn" name="storeBtn" type="checkbox" onchange="storeUserInfo()"/>下回来还认得你</p>
             </form>
         </div>
     </div>

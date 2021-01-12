@@ -3,18 +3,12 @@ body{
     padding: 0;
 }
 
-body:before{
-    content:'';
-    position:fixed;
-    top:0;
-    width:100vw;
-    height:100vh;
-    background: rgba(0,0,0,.5);
-    z-index: 1000;
-}
-
 .top-padd{
-    padding-top: 0.1px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
 }
 
 .contact-form{
@@ -23,6 +17,7 @@ body:before{
     width: 30%;
     padding: 3% 5% 1% 5%;
     background: rgba(0,0,0,0);
+    z-index: 1000;
 }
 .avatar{
     position: absolute;
@@ -60,7 +55,7 @@ body:before{
     color: #fff;
     font-size: 120%;
 }
-.contact-form input[type="submit"]{
+.contact-form input[type="button"]{
     color: #fff;
     font-size: 120%;
     background: red;

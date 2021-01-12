@@ -47,3 +47,25 @@ function toSecret(_this){
     var pwd = $this.val();
     $this.val($.base64.encode(pwd));
 }
+
+function reLogin(){
+    if(!toVaild()){
+        return;
+    }
+    var user = $("#userName").val();
+    var pwd = $("#pwd").val();
+    $.ajax({
+        url: "/reLogin",
+        data: {userName: user, pwd: pwd},
+        type: "POST",
+        dataType: "json",
+        success: function(data) {
+            if(data.flag=="1"){
+                alert("登录成功");
+                $("#err-msg").html("&nbsp;");
+            }else{
+                $("#err-msg").html(data.flag);
+            }
+        }
+    });
+}
