@@ -8,6 +8,7 @@
     <title>管理室</title>
 
     <#include "./comm/common.ftlh">
+    <#include "comm/frameworktools.ftlh">
 
     <link rel="stylesheet" href="css/index/index.css">
     <script type="text/javascript" src="/js/index/index.js"></script>
@@ -21,6 +22,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="navbar-brand">
                 管理室
+                <input type="button" value="弹" onclick="boom();">
             </div>
 
             <div class="navbar-expand-lg">

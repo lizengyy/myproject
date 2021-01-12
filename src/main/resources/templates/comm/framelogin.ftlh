@@ -11,10 +11,10 @@
 </head>
 
 <body>
-<div class="container-fluid top-padd">
+<div class="container-fluid top-padd-f">
     <div class="col-md-12">
-        <div class="contact-form">
-            <img src="/img/login/point.jpg" alt="" class="avatar">
+        <div class="contact-form-f">
+            <img src="/img/login/point.jpg" alt="" class="avatar-f">
             <h2>掉线啦</h2>
             <form id="loginForm" name="loginForm" action="">
                 <p>账号：</p>

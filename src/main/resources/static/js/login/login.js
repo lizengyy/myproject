@@ -26,6 +26,7 @@ function storeUserInfo(){
 
 //表单提交前数据验证
 function toVaild(){
+    $("#err-msg").html("&nbsp;");
     var user = $("#userName").val();
     var pwd = $("#pwd").val();
     if(!user || user==""){
@@ -61,8 +62,9 @@ function reLogin(){
         dataType: "json",
         success: function(data) {
             if(data.flag=="1"){
-                alert("登录成功");
                 $("#err-msg").html("&nbsp;");
+                $("#relogin-div").removeClass("cover-div");
+                $("#relogin-div").hide();
             }else{
                 $("#err-msg").html(data.flag);
             }

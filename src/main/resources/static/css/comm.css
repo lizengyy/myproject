@@ -97,3 +97,12 @@ iframe {
     background-color: #594f73!important;
     border-radius: .5rem;
 }
+
+.cover-div{
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background-color: #556a66;
+    z-index: 199;
+}
