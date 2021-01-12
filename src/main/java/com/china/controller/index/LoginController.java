@@ -38,6 +38,11 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping(value = "frameLogin")
+    public String frameLogin() {
+        return "comm/framelogin";
+    }
+
     @RequestMapping(value="/login", method= RequestMethod.POST)
     public ModelAndView login(HttpServletResponse response, @RequestParam Map param, HttpSession session) {
         Map<String, Object> data = new HashMap();

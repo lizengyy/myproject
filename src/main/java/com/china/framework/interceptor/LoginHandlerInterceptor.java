@@ -56,7 +56,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
                 return true;
             }else{
                 log.info("<<<framework>>>用户凭证校验不通过，转向登录页面!");
-                response.sendRedirect("/error/unlogging");
+                response.sendRedirect("error/unlogging");
                 return false;
             }
         }catch (Exception e){

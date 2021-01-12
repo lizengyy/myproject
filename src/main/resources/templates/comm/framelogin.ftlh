@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>登录！</title>
 
-    <#include "./comm/common.ftlh">
+    <#include "common.ftlh">
 
     <link rel="stylesheet" href="css/login/framelogin.css">
     <script type="text/javascript" src="/js/login/framelogin.js"></script>
@@ -15,10 +15,10 @@
     <div class="col-md-12">
         <div class="contact-form">
             <img src="/img/login/point.jpg" alt="" class="avatar">
-            <h2>掉线了?得重新登录</h2>
+            <h2>掉线啦</h2>
             <form id="loginForm" name="loginForm" method="post" action="/login" onsubmit="return toVaild()">
                 <p>账号：</p>
-                <input id="userName" name="userName" type="text" placeholder="报上名来">
+                <input id="userName" name="userName" type="text" placeholder="例行检查，报上名来">
                 <p>密码：</p>
                 <input id="pwd" name="pwd" type="password" placeholder="还记得口令是啥不" onblur="toSecret(this)">
                 <#if errMsg?exists>

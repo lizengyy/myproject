@@ -40,6 +40,14 @@ public class MyErrorController implements ErrorController {
     }
 
     /**
+     * 跳转掉线重登录管理页面
+     */
+    @RequestMapping(value = "error/unlogging")
+    public String errorUnLogging(HttpServletRequest request, HttpServletResponse response) {
+        return "error/unlogging";
+    }
+
+    /**
      * Web页面错误处理
      */
     @RequestMapping(value = ERROR_PATH, produces = "text/html")

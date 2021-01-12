@@ -28,7 +28,7 @@ public class LoginConfiguration implements WebMvcConfigurer {
                 "/error",
                 "/login",
                 "/unlogging",
-                "/framelogin",
+                "/frameLogin",
                 "/loginPage",
                 "/error/**",
                 "/css/**",
