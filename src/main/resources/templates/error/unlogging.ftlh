@@ -6,8 +6,6 @@
 
     <#include "../comm/common.ftlh">
 
-<#--    <link rel="stylesheet" href="${rootPath}/css/login/framelogin.css">
-    <script type="text/javascript" src="${rootPath}/js/login/framelogin.js"></script>-->
 </head>
 
 <script type="text/javascript">
