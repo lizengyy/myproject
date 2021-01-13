@@ -1,9 +1,9 @@
 .contact-form{
-    margin-top: 5%;
+    margin-top: 10%;
     margin-left: 35%;
     width: 30%;
     padding: 3% 5% 1% 5%;
-    background: rgba(0,0,0,0);
+    background: rgba(0,0,0,.5);
     z-index: 1000;
 }
 .avatar{

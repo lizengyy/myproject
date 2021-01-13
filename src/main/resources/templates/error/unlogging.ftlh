@@ -11,7 +11,7 @@
 <script type="text/javascript">
     $(function(){
         if (window.top != window.self) {
-            location.href = _root_path + "/frameLogin";
+            window.top.boom();
         }else{
             window.location.href = _root_path + "/loginPage";
         }

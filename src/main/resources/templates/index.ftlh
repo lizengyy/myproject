@@ -22,7 +22,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="navbar-brand">
                 管理室
-                <input type="button" value="弹" onclick="boom();">
             </div>
 
             <div class="navbar-expand-lg">
