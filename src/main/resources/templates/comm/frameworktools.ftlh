@@ -12,7 +12,10 @@
 
 <body>
 
-<div id="relogin-div" style="display: none;">
+<div id="cover-div" class="cover-div">
+</div>
+
+<div id="relogin-div" class="top-div">
     <div class="col-md-12">
         <div class="contact-form">
             <img src="/img/login/point.jpg" alt="" class="avatar">
@@ -34,10 +37,13 @@
     </div>
 </div>
 
+<div id="msg-err" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div">
+</div>
+
 </body>
 <script type="text/javascript">
     function boom(){
-        $("#relogin-div").addClass("cover-div");
+        $("#cover-div").show();
         $("#relogin-div").show();
     }
 </script>

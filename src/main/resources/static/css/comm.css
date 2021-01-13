@@ -105,4 +105,10 @@ iframe {
     height:100vh;
     background-color: rgba(0,0,0,.2);
     z-index: 199;
+    display: none;
+}
+
+.top-div{
+    z-index: 1000;
+    display: none;
 }
