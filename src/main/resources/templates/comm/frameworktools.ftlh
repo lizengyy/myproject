@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <#--重登录遮罩层组件样式/js-start-->
-    <link rel="stylesheet" href="${rootPath}/css/login/framelogin.css">
+    <link rel="stylesheet" href="${rootPath}/css/frameworktools/frameworktools.css">
     <script type="text/javascript" src="${rootPath}/js/login/login.js"></script>
     <#--重登录遮罩层组件样式/js-end-->
 
