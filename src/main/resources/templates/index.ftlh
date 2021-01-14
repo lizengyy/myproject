@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch">
+<html lang="ch" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="navbar-brand">
                 管理室
+                <input type="button" value="弹" onclick="popErrMsg('警告')">
             </div>
 
             <div class="navbar-expand-lg">

@@ -63,7 +63,7 @@ function reLogin(){
         success: function(data) {
             if(data.flag=="1"){
                 $("#err-msg").html("&nbsp;");
-                reLogSuccess();
+                reLogHide();
             }else{
                 $("#err-msg").html(data.flag);
             }

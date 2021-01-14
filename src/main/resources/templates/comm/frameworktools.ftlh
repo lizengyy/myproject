@@ -12,6 +12,9 @@
 
 <body>
 
+<div id="cover-fixed" class="cover-fixed">
+</div>
+
 <div id="cover-div" class="cover-div">
 </div>
 
@@ -33,18 +36,29 @@
     </form>
 </div>
 
-<div id="msg-err" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div">
+<div id="msg-err" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div msg-err">
+    <img src="/img/icons/exclamation-square.svg" alt="" class="msg-icon">
 </div>
 
 </body>
 <script type="text/javascript">
-    function reLogin(){
-        $("#cover-div").show();
+    function reLogShow(){
+        $("#cover-fixed").show();
         $("#relogin-div").show();
     }
-    function reLogSuccess(){
-        $("#cover-div").hide();
+    function reLogHide(){
+        $("#cover-fixed").hide();
         $("#relogin-div").hide();
     }
+
+    function popErrMsg(str){
+        if (window.top != window.self) {
+            $("#cover-div").show();
+        }else{
+            $("#cover-fixed").show();
+        }
+        $("#msg-err").show();
+    }
+
 </script>
 </html>

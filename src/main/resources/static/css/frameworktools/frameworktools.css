@@ -61,3 +61,33 @@
 .relog-form input[type="checkbox"]{
     width:5%;
 }
+
+.cover-fixed{
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0,0,0,.2);
+    z-index: 199;
+    display: none;
+}
+
+.cover-div{
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0,0,0,0);
+    z-index: 199;
+    display: none;
+}
+
+.msg-icon{
+    width: 3rem;
+    height: 3rem;
+}
+
+.msg-err{
+    display: none;
+}
+

@@ -98,16 +98,6 @@ iframe {
     border-radius: .5rem;
 }
 
-.cover-div{
-    position:fixed;
-    top:0;
-    width:100vw;
-    height:100vh;
-    background-color: rgba(0,0,0,.2);
-    z-index: 199;
-    display: none;
-}
-
 .top-div{
     z-index: 999;
     display: none;
