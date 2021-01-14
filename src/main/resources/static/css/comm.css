@@ -72,7 +72,7 @@ iframe {
     position: absolute;
     top: auto!important;
     left: auto!important;
-    z-index: 1000;
+    z-index: 100;
     display: none;
     float: left;
     min-width: 10rem;
@@ -109,6 +109,6 @@ iframe {
 }
 
 .top-div{
-    z-index: 1000;
+    z-index: 999;
     display: none;
 }

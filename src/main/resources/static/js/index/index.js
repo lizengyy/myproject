@@ -88,7 +88,7 @@ function logout(){
         dataType: "json",
         success: function(data) {
             if(data=="1"){
-                // window.location.href = _root_path + "/loginPage";
+                window.location.href = _root_path + "/loginPage";
             }else{
                 alert("敲豆嘛跌，退出程序有点问题，快打120！");
             }

@@ -63,8 +63,7 @@ function reLogin(){
         success: function(data) {
             if(data.flag=="1"){
                 $("#err-msg").html("&nbsp;");
-                $("#relogin-div").removeClass("cover-div");
-                $("#relogin-div").hide();
+                reLogSuccess();
             }else{
                 $("#err-msg").html(data.flag);
             }

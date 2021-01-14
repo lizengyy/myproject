@@ -1,38 +1,40 @@
-.contact-form{
-    margin-top: 10%;
+.relog-form{
+    position: fixed;
+    margin-top: 0%;
     margin-left: 35%;
     width: 30%;
     padding: 3% 5% 1% 5%;
     background: rgba(0,0,0,.5);
-    z-index: 1000;
+    z-index: 999;
+    display: none;
 }
-.avatar{
+.relog-avatar{
     position: absolute;
     height: 22%;
     border-radius: 50%;
     overflow: hidden;
-    top: calc(-13%);
-    left: calc(47%);
+    top: calc(-12%);
+    left: calc(39%);
 }
-.contact-form h2{
+.relog-form h2{
     margin:0;
     padding:0 0 20px;
     color:#fff;
     text-align:center;
     text-transform:uppercase;
 }
-.contact-form p{
+.relog-form p{
     margin:0;
     padding:0;
     font-weight:bold;
     color:#fff;
 }
-.contact-form input{
+.relog-form input{
     width:100%;
     margin-bottom:5%;
 }
-.contact-form input[type="text"],
-.contact-form input[type="password"]
+.relog-form input[type="text"],
+.relog-form input[type="password"]
 {
     border: none;
     border-bottom: 1px solid #fff;
@@ -42,7 +44,7 @@
     color: #fff;
     font-size: 120%;
 }
-.contact-form input[type="button"]{
+.relog-form input[type="button"]{
     color: #fff;
     font-size: 120%;
     background: red;
@@ -50,12 +52,12 @@
     border: none;
     margin-top: 5%;
 }
-.contact-form a{
+.relog-form a{
     color:#fff;
     font-size:14px;
     font-weight:bold;
     text-decoration:none;
 }
-input[type="checkbox"]{
+.relog-form input[type="checkbox"]{
     width:5%;
 }

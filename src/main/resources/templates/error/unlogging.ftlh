@@ -11,7 +11,7 @@
 <script type="text/javascript">
     $(function(){
         if (window.top != window.self) {
-            window.top.boom();
+            window.top.reLogin();
         }else{
             window.location.href = _root_path + "/loginPage";
         }

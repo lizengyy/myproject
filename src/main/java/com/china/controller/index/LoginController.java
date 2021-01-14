@@ -38,11 +38,6 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping(value = "frameLogin")
-    public String frameLogin() {
-        return "comm/framelogin";
-    }
-
     @RequestMapping(value="/reLogin", method= RequestMethod.POST)
     @ResponseBody
     public Map reLogin(HttpServletResponse response, @RequestParam Map param, HttpSession session) {
