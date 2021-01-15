@@ -37,7 +37,7 @@
 </div>
 
 <div id="msg-err" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div msg-err">
-    <img src="/img/icons/exclamation-square.svg" alt="" class="msg-icon">
+    <img src="/img/icons/exclamation-square.svg" alt="" class="msg-icon" title="警告">
 </div>
 
 </body>
@@ -54,10 +54,11 @@
     function popErrMsg(str){
         if (window.top != window.self) {
             $("#cover-div").show();
+            parent.$("#msg-err").show();
         }else{
             $("#cover-fixed").show();
+            $("#msg-err").show();
         }
-        $("#msg-err").show();
     }
 
 </script>

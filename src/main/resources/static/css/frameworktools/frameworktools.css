@@ -88,6 +88,12 @@
 }
 
 .msg-err{
+    position: fixed;
+    top: 40%;
+    width: 40%;
     display: none;
+    height: 20%;
+    background-color: #4b6170;
+    z-index: 999;
 }
 
