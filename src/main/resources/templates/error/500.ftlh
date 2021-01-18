@@ -37,7 +37,7 @@
 </head>
 <body>
 <div class="dev500">
-    <img src="/img/btn/backBtn.jpg" alt="" onclick="goBack()" class="img500">
+    <img src="/img/btn/backBtn.svg" alt="" onclick="goBack()" class="img500">
 </div>
 </body>
 </html>

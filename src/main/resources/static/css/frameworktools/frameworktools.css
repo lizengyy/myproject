@@ -89,11 +89,36 @@
 
 .msg-err{
     position: fixed;
-    top: 40%;
+    top: 30%;
+    margin: auto;
+    left: 0;
+    right: 0;
     width: 40%;
     display: none;
-    height: 20%;
+    min-height: 30%;
     background-color: #4b6170;
+    padding: .5rem;
     z-index: 999;
+}
+
+.icon-div{
+    position: absolute;
+    width: 3rem;
+}
+
+.msg-content{
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 85%;
+    text-align: center;
+}
+
+.msg-bottom{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: .5rem;
+    left: 0;
 }
 

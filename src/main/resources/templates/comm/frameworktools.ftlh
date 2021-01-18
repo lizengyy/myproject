@@ -37,7 +37,15 @@
 </div>
 
 <div id="msg-err" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div msg-err">
-    <img src="/img/icons/exclamation-square.svg" alt="" class="msg-icon" title="警告">
+    <div>
+        <div class="msg-content">
+            <span >测试内容，测试内容</span>
+        </div>
+        <div class="msg-bottom">
+            <input type="button" value="知道了">
+        </div>
+    </div>
+    <div></div>
 </div>
 
 </body>

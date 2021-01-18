@@ -102,3 +102,11 @@ iframe {
     z-index: 999;
     display: none;
 }
+
+.floatl{
+    float: left;
+}
+
+.txcent{
+    text-align-all: center;
+}

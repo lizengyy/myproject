@@ -40,7 +40,7 @@
 </head>
 <body>
 <div class="dev404">
-    <img src="/img/btn/backBtn.jpg" alt="" onclick="goBack()" class="img404">
+    <img src="/img/btn/backBtn.svg" alt="" onclick="goBack()" class="img404">
 </div>
 </body>
 </html>
