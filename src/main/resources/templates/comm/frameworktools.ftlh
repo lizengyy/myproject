@@ -20,7 +20,7 @@
 
 <div id="relogin-div" class="relog-form">
     <img src="/img/login/point.jpg" alt="" class="relog-avatar">
-    <h2>掉线啦</h2>
+    <h2>重新登录</h2>
     <form id="loginForm" name="loginForm" action="">
         <p>账号：</p>
         <input id="userName" name="userName" type="text" placeholder="例行检查，报上名来">
@@ -36,16 +36,23 @@
     </form>
 </div>
 
-<div id="msg-err" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div msg-err">
-    <div>
-        <div class="msg-content">
-            <span >测试内容，测试内容</span>
-        </div>
-        <div class="msg-bottom">
-            <input type="button" value="知道了">
-        </div>
+<div id="msg-div" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div msg-div">
+    <div class="msg-content">
+        <span id="msg-div-text"></span>
     </div>
-    <div></div>
+    <div class="msg-bottom">
+        <img src="/img/btn/queren.svg" alt="" class="btn-icon" onclick="okey('msg-div');">
+    </div>
+</div>
+
+<div id="msg-confirm" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-div msg-div c-info">
+    <div class="msg-content">
+        <span id="msg-confirm-text"></span>
+    </div>
+    <div class="msg-bottom">
+        <img src="/img/btn/queren.svg" alt="" class="btn-icon">
+        <img src="/img/btn/cancel.svg" alt="" class="btn-icon">
+    </div>
 </div>
 
 </body>
@@ -61,11 +68,46 @@
 
     function popErrMsg(str){
         if (window.top != window.self) {
-            $("#cover-div").show();
-            parent.$("#msg-err").show();
+            window.self.$("#cover-div").show();
+            window.self.$("#msg-div-text").text(str);
+            window.self.$("#msg-div").removeClass("c-info");
+            window.self.$("#msg-div").addClass("c-err");
+            window.self.$("#msg-div").show();
         }else{
             $("#cover-fixed").show();
-            $("#msg-err").show();
+            $("#msg-div-text").text(str);
+            $("#msg-div").removeClass("c-info");
+            $("#msg-div").addClass("c-err");
+            $("#msg-div").show();
+        }
+    }
+
+    function popMsg(str){
+        if (window.top != window.self) {
+            window.self.$("#cover-div").show();
+            window.self.$("#msg-div-text").text(str);
+            window.self.$("#msg-div").removeClass("c-err");
+            window.self.$("#msg-div").addClass("c-info");
+            window.self.$("#msg-div").show();
+        }else{
+            $("#cover-fixed").show();
+            $("#msg-div-text").text(str);
+            $("#msg-div").removeClass("c-err");
+            $("#msg-div").addClass("c-info");
+            $("#msg-div").show();
+        }
+    }
+
+    function okey(perfix){
+        if (window.top != window.self) {
+            window.self.$("#cover-div").hide();
+            window.self.$("#"+perfix+"-text").text("");
+            window.self.$("#"+perfix).hide();
+        }else{
+            $("#cover-fixed").hide();
+            $("#cover-div").hide();
+            $("#"+perfix+"-text").text("");
+            $("#"+perfix).hide();
         }
     }
 

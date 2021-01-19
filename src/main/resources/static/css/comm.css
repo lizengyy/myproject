@@ -54,6 +54,19 @@ iframe {
     cursor: help;
 }
 
+.btn-icon {
+    height: auto;
+    width: 2rem;
+}
+
+.c-err{
+    background-color: #7b4451;
+}
+
+.c-info{
+    background-color: #556a66;
+}
+
 .comm-input {
     display: block;
     margin-left: 1rem;
