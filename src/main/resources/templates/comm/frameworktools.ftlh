@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
 
+    <#include "../comm/common.ftlh">
+
     <#--重登录遮罩层组件样式/js-start-->
     <link rel="stylesheet" href="${rootPath}/css/frameworktools/frameworktools.css">
     <script type="text/javascript" src="${rootPath}/js/login/login.js"></script>
@@ -50,8 +52,8 @@
         <span id="msg-confirm-text"></span>
     </div>
     <div class="msg-bottom">
-        <img src="/img/btn/queren.svg" alt="" class="btn-icon">
-        <img src="/img/btn/cancel.svg" alt="" class="btn-icon">
+        <img id="confirm-btn" src="/img/btn/queren.svg" alt="" class="btn-icon">
+        <img src="/img/btn/cancel.svg" alt="" class="btn-icon" onclick="okey('msg-confirm');">
     </div>
 </div>
 
@@ -98,6 +100,20 @@
         }
     }
 
+    function popConfirm(str, callback){
+        if (window.top != window.self) {
+            window.self.$("#cover-div").show();
+            window.self.$("#msg-confirm-text").text(str);
+            window.self.$("#confirm-btn").attr("onclick", "confirm("+callback+")");
+            window.self.$("#msg-confirm").show();
+        }else{
+            $("#cover-fixed").show();
+            $("#msg-confirm-text").text(str);
+            $("#confirm-btn").attr("onclick", "confirm("+callback+")");
+            $("#msg-confirm").show();
+        }
+    }
+
     function okey(perfix){
         if (window.top != window.self) {
             window.self.$("#cover-div").hide();
@@ -109,6 +125,11 @@
             $("#"+perfix+"-text").text("");
             $("#"+perfix).hide();
         }
+    }
+
+    function confirm(callback){
+        okey('msg-confirm');
+        callback();
     }
 
 </script>
