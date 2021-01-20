@@ -31,16 +31,17 @@
         }
     </style>
 
-    <script type="text/javascript">
-        function goBack(){
-            window.history.go(-1);
-        }
-    </script>
-
 </head>
 <body>
 <div class="dev404">
     <img src="/img/btn/backBtn.svg" alt="" onclick="goBack()" class="img404">
 </div>
+
+<script type="text/javascript">
+    function goBack(){
+        window.history.go(-1);
+    }
+</script>
+
 </body>
 </html>

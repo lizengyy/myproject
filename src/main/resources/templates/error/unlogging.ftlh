@@ -8,6 +8,7 @@
 
 </head>
 
+<body>
 <script type="text/javascript">
     $(function(){
         if (window.top != window.self) {
@@ -17,7 +18,5 @@
         }
     });
 </script>
-
-<body>
 </body>
 </html>

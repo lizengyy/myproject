@@ -10,7 +10,6 @@
     <#include "comm/frameworktools.ftlh">
 
     <link rel="stylesheet" href="css/index/index.css">
-    <script type="text/javascript" src="/js/index/index.js"></script>
 </head>
 <body>
 
@@ -102,5 +101,6 @@
 
 </div>
 
+<script type="text/javascript" src="/js/index/index.js"></script>
 </body>
 </html>

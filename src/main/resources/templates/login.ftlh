@@ -7,7 +7,6 @@
     <#include "./comm/common.ftlh">
 
     <link rel="stylesheet" href="css/login/login.css">
-    <script type="text/javascript" src="/js/login/login.js"></script>
 </head>
 
 <body>
@@ -32,5 +31,7 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="/js/login/login.js"></script>
 </body>
 </html>
