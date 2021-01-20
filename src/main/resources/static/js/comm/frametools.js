@@ -43,12 +43,12 @@ function popConfirm(str, callback){
     if (window.top != window.self) {
         window.self.$("#cover-div").show();
         window.self.$("#msg-confirm-text").text(str);
-        window.self.$("#confirm-btn").attr("onclick", "confirm("+callback+")");
+        window.self.$("#confirm-btn").attr("onclick", "confirmokey("+callback+")");
         window.self.$("#msg-confirm").show();
     }else{
         $("#cover-fixed").show();
         $("#msg-confirm-text").text(str);
-        $("#confirm-btn").attr("onclick", "confirm("+callback+")");
+        $("#confirm-btn").attr("onclick", "confirmokey("+callback+")");
         $("#msg-confirm").show();
     }
 }
@@ -66,7 +66,7 @@ function okey(perfix){
     }
 }
 
-function confirm(callback){
+function confirmokey(callback){
     okey('msg-confirm');
     callback();
 }
