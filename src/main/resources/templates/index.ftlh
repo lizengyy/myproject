@@ -74,7 +74,7 @@
                                     <#list UserMenu.menuSecond as menu_s>
                                         <a class="dropdown-item" href="#" id="${menu_s.menuId}-link" onclick="addtab(this)" fun-name="${menu_s.menuName}" target-url="${menu_s.menuUrl}">${menu_s.menuName}</a>
                                     </#list>
-                                    <a class="dropdown-item logout-tip" href="#" onclick="logout()">退出登录</a>
+                                    <a class="dropdown-item logout-tip" href="#" onclick="popConfirm('准备退出至登录页面，及时保存操作信息', logout)">退出登录</a>
                                 </div>
                             </#if>
                         </li>
