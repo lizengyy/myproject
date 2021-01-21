@@ -24,10 +24,10 @@ public class IndexController {
     Logger log = LoggerFactory.getLogger(IndexController.class);
 
     @Autowired
-    AdminService adminService;
+    private AdminService adminService;
 
     @Autowired
-    MenuService menuService;
+    private MenuService menuService;
 
     @RequestMapping("/index")
     public ModelAndView index(HttpServletRequest request) {

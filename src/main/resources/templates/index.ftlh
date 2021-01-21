@@ -94,9 +94,7 @@
 
 <div class="busi-index  col-xs-12 col-sm-12 col-md-11 col-lg-11">
 
-    <div class="col-md-12">
-        <div id="iframe-div" class="iframe-div">
-        </div>
+    <div id="iframe-div" class="iframe-div">
     </div>
 
 </div>

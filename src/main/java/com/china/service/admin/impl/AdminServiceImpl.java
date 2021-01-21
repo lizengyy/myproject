@@ -13,8 +13,8 @@ public class AdminServiceImpl implements AdminService {
     private AdminMapper adminMapper;
 
     @Override
-    public AdminEntity selectOneAdministrator(String user) {
-        return adminMapper.selectOne(user);
+    public AdminEntity selectOneAdministrator(String key) {
+        return adminMapper.selectOne(key);
     }
 
 }
