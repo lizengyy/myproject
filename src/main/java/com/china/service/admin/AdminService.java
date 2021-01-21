@@ -4,6 +4,6 @@ import com.china.entity.admin.AdminEntity;
 
 public interface AdminService {
 
-    AdminEntity selectOneAdministrator(String key);
+    AdminEntity selectOneAdministrator(String user);
 
 }
