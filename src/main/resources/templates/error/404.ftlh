@@ -31,17 +31,24 @@
         }
     </style>
 
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            if (window.top != window.self) {
+                $("#back404").hide();
+            }
+        });
+        function goBack(){
+            window.history.go(-1);
+        }
+    </script>
+
 </head>
 <body>
 <div class="dev404">
-    <img src="/img/btn/backBtn.svg" alt="" onclick="goBack()" class="img404">
+    <img id="back404" src="/img/btn/backBtn.svg" alt="" onclick="goBack()" class="img404">
 </div>
-
-<script type="text/javascript">
-    function goBack(){
-        window.history.go(-1);
-    }
-</script>
 
 </body>
 </html>
