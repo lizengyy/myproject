@@ -13,6 +13,7 @@ iframe {
     left: 4.16%;
     right: 4.16%;
     top: 0;
+    height: 7rem;
     padding-top: .5rem;
     z-index: 99;
     background-color: #556a66;
@@ -33,7 +34,7 @@ iframe {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 8%;
+    margin-top: 7rem;
     z-index: 1;
 }
 
