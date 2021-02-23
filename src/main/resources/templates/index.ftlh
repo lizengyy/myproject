@@ -50,7 +50,7 @@
             </div>
 
             <div class="navbar-collapse">
-                <input class="comm-input mr-sm-2" type="text"/>
+                <input class="comm-search mr-sm-2" type="text"/>
                 <img class="comm-icon" src="/img/icons/search.svg" alt="搜索" title="搜索">
             </div>
 
