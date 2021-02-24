@@ -17,4 +17,9 @@ public class AdminServiceImpl implements AdminService {
         return adminMapper.selectOne(user);
     }
 
+    @Override
+    public void updatePwd(String id, String pwd){
+        adminMapper.updatePwd(id, pwd);
+    }
+
 }

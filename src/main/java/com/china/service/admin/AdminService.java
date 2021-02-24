@@ -6,4 +6,6 @@ public interface AdminService {
 
     AdminEntity selectOneAdministrator(String user);
 
+    void updatePwd(String id, String pwd);
+
 }

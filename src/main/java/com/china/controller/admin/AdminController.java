@@ -46,11 +46,11 @@ public class AdminController {
         String ticket = request.getAttribute("UserTicket")+"";
         AdminEntity user = (AdminEntity)request.getSession().getAttribute(ticket);
         if(user!=null && opwd.equals(user.getPwd())){
-            // TODO
+            adminService.updatePwd(user.getId(), npwd);
+            return "1";
         }else{
             return "输入旧密码不正确!";
         }
-        return "1";
     }
 
 }

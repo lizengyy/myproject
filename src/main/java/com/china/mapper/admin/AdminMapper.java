@@ -14,7 +14,7 @@ public interface AdminMapper {
     })
     AdminEntity selectOne(@Param("user") String user);
 
-//    @Update("<script> update tbl_bal_t  <set><if test='TOTAL_AMT!=null'> total_amt = #{TOTAL_AMT}, </if><if test='COMM_AMT!=null'> comm_amt = #{COMM_AMT}, </if><if test='FRZ_AMT!=null'> frz_amt = #{FRZ_AMT} </if></set> where cd_bin = #{cdBin} </script>")
-//    void updateBal(Map param);
+    @Update("<script> update admin  <set><if test='pwd!=null'> pwd = #{pwd} </if></set> where id = #{id} </script>")
+    void updatePwd(String id, String pwd);
 
 }
