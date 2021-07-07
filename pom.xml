@@ -76,6 +76,12 @@
             <version>1.4.1</version>
         </dependency>
 
+        <!-- 内部公用代码包 -->
+        <dependency>
+            <groupId>com.pkg</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

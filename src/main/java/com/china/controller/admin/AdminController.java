@@ -2,7 +2,7 @@ package com.china.controller.admin;
 
 import com.china.entity.admin.AdminEntity;
 import com.china.service.admin.AdminService;
-import com.china.utils.MapUtil;
+import com.pkg.util.MapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
