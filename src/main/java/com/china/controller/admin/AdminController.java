@@ -2,6 +2,7 @@ package com.china.controller.admin;
 
 import com.china.entity.admin.AdminEntity;
 import com.china.service.admin.AdminService;
+import com.pkg.util.DateTimeUtil;
 import com.pkg.util.MapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +35,8 @@ public class AdminController {
         data.put("UserInfo", user);
         data.put("state", user.getState());
         data.put("PartName", user.getPartId());
-        data.put("Age", "xx年xx月xx天");
+        int ageDays = DateTimeUtil.countBetweenDays(user.getCrtDate(), new Date());
+        data.put("Age", ageDays+"天");
         return new ModelAndView("admin/admininfo", data);
     }
 
