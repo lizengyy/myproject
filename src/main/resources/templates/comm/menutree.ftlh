@@ -1,6 +1,6 @@
+<ul>
 <!-- 递归  宏定义 -->
 <#macro menuTree childrenList>
-<ul class="treeview-menu">
     <#if childrenList?? && childrenList?size gt 0>
         <#list childrenList as child>
             <#if child.menuSecond?? && child.menuSecond?size gt 0>
@@ -18,8 +18,8 @@
             </#if>
         </#list>
     </#if>
-</ul>
 </#macro>
+</ul>
 
 <script type="text/javascript">
 
