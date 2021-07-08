@@ -8,6 +8,8 @@ spring:
     charset: UTF-8
     content-type: text/html
     template-loader-path: classpath:/templates/
+    settings:
+      template_update_delay: 0
   #数据库连接配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

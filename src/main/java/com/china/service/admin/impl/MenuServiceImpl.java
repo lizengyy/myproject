@@ -66,4 +66,26 @@ public class MenuServiceImpl implements MenuService {
         return data;
     }
 
+    @Override
+    public List<MenuEntity> getMenuTree(int menulvl, int menuType, String roleId) {
+        List<MenuEntity> rootData = menuMapper.selectList(Constant.MENU_LVL_IDX, Constant.MENU_ROOT, -1);
+        if(rootData==null || rootData.size()<1){
+            return new ArrayList<>();
+        }
+        queryTreeChild(rootData);
+        return rootData;
+    }
+
+    private List<MenuEntity> queryTreeChild(List<MenuEntity> parentList) {
+        if(parentList!=null || parentList.size()>0){
+            for(MenuEntity MenuEntity : parentList){
+                List<MenuEntity> data = menuMapper.selectList(-1, MenuEntity.getMenuId(), -1);
+                if(data!=null && data.size()>0){
+                    MenuEntity.setMenuSecond(queryTreeChild(data));
+                }
+            }
+        }
+        return parentList;
+    }
+
 }
