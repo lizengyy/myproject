@@ -1,20 +1,23 @@
-<ul>
+
 <!-- 递归  宏定义 -->
 <#macro menuTree childrenList>
     <#if childrenList?? && childrenList?size gt 0>
         <#list childrenList as child>
             <#if child.menuSecond?? && child.menuSecond?size gt 0>
-                <li class="treeview">
-                    <a href="javascript:void(0)">
-                        <i class="" aria-hidden="true"></i> <span>${child.menuName}</span>
-                        <i class="fa fa-angle-left pull-right" aria-hidden="true"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <@menuTree childrenList=child.menuSecond/>
-                    </ul>
+            <ul class="treeulcoll">
+                <li class="treeli">
+                    <span onclick="ex_coll('branch_${child.menuId}', this)">${child.menuName}</span>
                 </li>
+                <ul class="treeulex css-hide" id="branch_${child.menuId}">
+                    <@menuTree childrenList=child.menuSecond/>
+                </ul>
+            </ul>
             <#else>
-                <li><a href="javascript:void(0)"><i class="" aria-hidden="true"></i> ${child.menuName}</a></li>
+            <ul class="treeulcoll">
+                <li class="treeli">
+                    <span onclick="ex_coll('', this)">${child.menuName}</span>
+                </li>
+            </ul>
             </#if>
         </#list>
     </#if>
@@ -22,5 +25,21 @@
 </ul>
 
 <script type="text/javascript">
-
+    function ex_coll(ulId, _this){
+        var parentul = $(_this).parent().parent();
+        if(parentul.hasClass("treeulcoll")){
+            parentul.removeClass("treeulcoll");
+            parentul.addClass("treeulex");
+        }else if(parentul.hasClass("treeulex")){
+            parentul.removeClass("treeulex");
+            parentul.addClass("treeulcoll");
+        }
+        if(ulId!=="" && $("#"+ulId)){
+            if(parentul.hasClass("treeulcoll")){
+                $("#"+ulId).hide();
+            }else if(parentul.hasClass("treeulex")){
+                $("#"+ulId).show();
+            }
+        }
+    }
 </script>
