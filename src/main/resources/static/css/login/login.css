@@ -71,6 +71,7 @@ body:before{
     cursor: pointer;
     border: none;
     margin-top: 5%;
+    border-radius: .5rem;
 }
 .contact-form a{
     color:#fff;
