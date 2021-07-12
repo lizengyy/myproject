@@ -30,6 +30,11 @@ iframe {
     display: none;
 }
 
+.choosebkg {
+    background-color: #594f73!important;
+    border-radius: .5rem;
+}
+
 .busi-index {
     width: 100%;
     margin-right: auto;
@@ -179,11 +184,11 @@ iframe {
 }
 
 .treeli{
-    padding: 1px 1rem 0 .25rem;
+    margin: 0 1rem 0 .25rem;
+    padding: 1px 0 0 .25rem;
 }
 
-.treeli:hover, .treeli:focus {
+.treeli:hover {
     background-color: #594f73!important;
     border-radius: .5rem;
 }
-

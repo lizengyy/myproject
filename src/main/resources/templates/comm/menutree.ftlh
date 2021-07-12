@@ -5,8 +5,8 @@
         <#list childrenList as child>
             <#if child.menuSecond?? && child.menuSecond?size gt 0>
             <ul class="treeulcoll">
-                <li class="treeli">
-                    <span onclick="ex_coll('branch_${child.menuId}', this)">${child.menuName}</span>
+                <li class="treeli" onclick="ex_coll('branch_${child.menuId}', this)">
+                    <span>${child.menuName}</span>
                 </li>
                 <ul class="treeulex css-hide" id="branch_${child.menuId}">
                     <@menuTree childrenList=child.menuSecond/>
@@ -14,8 +14,8 @@
             </ul>
             <#else>
             <ul class="treeulcoll">
-                <li class="treeli">
-                    <span onclick="ex_coll('', this)">${child.menuName}</span>
+                <li class="treeli" onclick="ex_coll('', this)">
+                    <span>${child.menuName}</span>
                 </li>
             </ul>
             </#if>
@@ -26,7 +26,7 @@
 
 <script type="text/javascript">
     function ex_coll(ulId, _this){
-        var parentul = $(_this).parent().parent();
+        var parentul = $(_this).parent();
         if(parentul.hasClass("treeulcoll")){
             parentul.removeClass("treeulcoll");
             parentul.addClass("treeulex");
@@ -41,5 +41,7 @@
                 $("#"+ulId).show();
             }
         }
+        $(".treeli").removeClass("choosebkg");
+        $(_this).addClass("choosebkg");
     }
 </script>
