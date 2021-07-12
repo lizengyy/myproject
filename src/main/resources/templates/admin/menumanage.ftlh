@@ -14,12 +14,13 @@
 <body>
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 floatl fitfull">
-    <!-- 调用宏 生成递归树 -->
+    <!-- 调用宏递归树形菜单组件 -->
     <@menuTree childrenList=MenuTree />
 </div>
-<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 floatl fitfull">操作区域</div>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 floatl fitfull">
+
+</div>
 
 <script type="text/javascript" src="/js/admin/menumanage.js"></script>
-
 </body>
 </html>

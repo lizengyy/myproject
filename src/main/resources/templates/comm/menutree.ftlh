@@ -5,7 +5,7 @@
         <#list childrenList as child>
             <#if child.menuSecond?? && child.menuSecond?size gt 0>
             <ul class="treeulcoll">
-                <li class="treeli" onclick="ex_coll('branch_${child.menuId}', this)">
+                <li class="treeli" onclick="ex_coll('branch_${child.menuId}', this, nodecallback)" isparent="1">
                     <span>${child.menuName}</span>
                 </li>
                 <ul class="treeulex css-hide" id="branch_${child.menuId}">
@@ -14,7 +14,7 @@
             </ul>
             <#else>
             <ul class="treeulcoll">
-                <li class="treeli" onclick="ex_coll('', this)">
+                <li class="treeli" onclick="ex_coll('branch_${child.menuId}', this, nodecallback)"  isparent="0">
                     <span>${child.menuName}</span>
                 </li>
             </ul>
@@ -25,7 +25,8 @@
 </ul>
 
 <script type="text/javascript">
-    function ex_coll(ulId, _this){
+    function ex_coll(ulId, _this, nodecallback){
+        var isparent = $(_this).attr("isparent");
         var parentul = $(_this).parent();
         if(parentul.hasClass("treeulcoll")){
             parentul.removeClass("treeulcoll");
@@ -34,7 +35,7 @@
             parentul.removeClass("treeulex");
             parentul.addClass("treeulcoll");
         }
-        if(ulId!=="" && $("#"+ulId)){
+        if(isparent=="1"){
             if(parentul.hasClass("treeulcoll")){
                 $("#"+ulId).hide();
             }else if(parentul.hasClass("treeulex")){
@@ -43,5 +44,10 @@
         }
         $(".treeli").removeClass("choosebkg");
         $(_this).addClass("choosebkg");
+        if(nodecallback!=undefined && typeof nodecallback=='function'){
+            nodecallback(ulId.replace('branch_', ''));
+        }else{
+            console.info("组件调用页JS未定义点击回调函数nodecallback()");
+        }
     }
 </script>
